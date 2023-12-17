@@ -1,6 +1,6 @@
-from sqlalchemy import Boolean, Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String
 from pydantic import BaseModel
+from sqlalchemy.orm import relationship
 from src.python.enviroment.database import Base
 
 
@@ -8,15 +8,13 @@ class User(Base):
     __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    username = Column(String(50), unique=True)
-    firstname = Column(String(50))
-    lastname = Column(String(50))
-    email = Column(String(50), unique=True)
-    password = Column(String(50), unique=True)
-    role_id = Column(Integer, ForeignKey('roles.id'))
+    username = Column(String(50), unique=True, nullable=False)
+    firstname = Column(String(50), nullable=False)
+    lastname = Column(String(50), nullable=False)
+    email = Column(String(50), unique=True, nullable=False)
+    password = Column(String(50), unique=True, nullable=False)
 
-    # Визначення відношення до таблиці Role
-    role = relationship("Role", back_populates="users")
+    datasets = relationship("DataSet", back_populates="author")
 
 
 class UserBase(BaseModel):
@@ -25,16 +23,7 @@ class UserBase(BaseModel):
     lastname: str
     email: str
     password: str
-    role_id: int
 
 
 class UserBaseWithID(UserBase):
     id: int
-
-
-
-
-
-
-
-

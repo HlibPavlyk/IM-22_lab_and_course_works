@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Depends, status
+from fastapi import Depends
 from typing import Annotated
 from sqlalchemy.orm import Session
 from src.python.enviroment.database import SessionLocal
