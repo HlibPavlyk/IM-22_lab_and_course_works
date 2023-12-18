@@ -1,6 +1,5 @@
 ---
 home: true
-title: "Новий Заголовоквфів"
 actionText: Розпочати →
 actionLink: /intro/
 
