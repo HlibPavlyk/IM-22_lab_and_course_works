@@ -3,7 +3,7 @@ home: true
 actionText: Розпочати →
 actionLink: /intro/
 
-footer: "ECL 2.0 Licensed | Copyright © [2023] [Oleksand Horovyi]"
+footer: "ECL 2.0 Licensed | Copyright © [2023] [Hlib Pavlyk]"
 ---
 
 
